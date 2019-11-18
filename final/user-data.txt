@@ -1,0 +1,12 @@
+#!/bin/bash
+echo "This is a sample file " > /tmp/testFile
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDi1SHorJMigb+8l8kUZXdbXUNPOG0PFES2rDPgU9HMFuQAAiyfxf0FsQcMrkI1aXIgYS3fjLFzlEQ6QFOhfCoZXkADzPiZ/G5tWxFV7Q/mKsrxviiGOqbWCLP3wErF7b0KfVffQvFN5Myzylq58OBXJ+a9YXWuATmc47CG5nBcHxjS8cdigsTAdkytMu359/qg1kH26ZB/ryLzBuU4+621JA9F7EoB9AFzKbzK8XsT9xtdrPFUqcM2KWO5t10PmRIjyFAfaHsbV6PhmNZuDpnx4581LELLaVCV66BCjyp2mp9ZCimf/m6r7q8etAQe+PuhmhJjJvshqeuqi4nXaUkbxlELwd7xOBGmkDeHcsbsqBtwkTYsH9LvSLQmhX76n8Z0xZDHT/ONsRg4j+CgIeaKVDM942O4bCeCVzicgS9SlGM5Dj9FJiPNJRt778TUeOqlMOPQkeoMJaLjvowFzQCAsDELTNgQ/+5Z8G72f/KpZJodPk3Yut4kZxVizoE19pIsaBGu7lFaU7d5jZu2td8Em5xnRIN2VYvEhjnmwUo35owkmdIk8wqxikH51CUw34IcbvJ1r1g7DvBujWOmzuhNmzZs3MRK+drhsgzfSiELuc6VgrXi250fmqjOObTW1Qukn90K0as6t3ana1dVOWyC1bJS2a77yaBi8SsIYDuJdw== dhanunjay.mhr@gmail.com" >> /home/ubuntu/.ssh/authorized_keys
+cat /tmp/id_rsa.pub >> /home/ubuntu/.ssh/authorized_keys 
+sudo apt update  -y
+sudo apt-get install python -y
+sudo apt-get install python-apt -y
+sudo apt update  -y
+sudo apt-get install -y apache2
+sudo systemctl start apache2
+sudo systemctl enable apache2
+echo "<h1>Deployed Apache Web Server from  Terraform</h1>" | sudo tee /var/www/html/index.html
